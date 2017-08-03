@@ -1,5 +1,5 @@
 import React, { Component } from 'react'
-import { connect } from 'redux'
+import { connect } from 'react-redux'
 
 class SearchForm extends Component {
   state = {
@@ -31,4 +31,4 @@ class SearchForm extends Component {
 	}
 }
 
-export default SearchForm
+export default connect()(SearchForm)
