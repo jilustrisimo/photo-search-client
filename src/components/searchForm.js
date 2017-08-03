@@ -1,10 +1,19 @@
 import React, { Component } from 'react'
 import { connect } from 'react-redux'
+import { bindActionCreators } from 'redux'
+
+import * as actions from '../redux/actions/searchFormActions'
 
 class SearchForm extends Component {
   state = {
     input: ''
-  }
+	}
+	
+	handleSubmit = e => {
+		e.preventDefault()
+		this.props.performSearch(this.state.input)
+		e.currentTarget.reset()
+	}
 
   handleChange = e => {
     this.setState({
@@ -18,8 +27,8 @@ class SearchForm extends Component {
 				<label className="is-hidden" htmlFor="search">Search</label>
 				<input
 					type="search"
-					onChange={this.onSearchChange}
-					ref={input => (this.query = input)}
+					onChange={e => this.handleChange(e)}
+					value={this.state.input}
 					name="search"
 					placeholder="Search..."
 				/>
@@ -31,4 +40,8 @@ class SearchForm extends Component {
 	}
 }
 
-export default connect()(SearchForm)
+const matchDispatchToProps = dispatch => {
+	return bindActionCreators(actions, dispatch)
+}
+
+export default connect(null, matchDispatchToProps)(SearchForm)
