@@ -7,6 +7,7 @@ import React, { Component } from 'react'
 // } from 'react-router-dom'
 
 import SearchForm from '../components/searchForm'
+import ImgList from '../containers/ImgList'
 // import logo from './logo.svg';
 import './App.css';
 // import Home from '../views/Home'
@@ -19,10 +20,11 @@ class App extends Component {
 				<div className="main-header">
 					<div className="inner">
 						<h1 className="main-title">PhotoSearch</h1>
-            <SearchForm />
+             <SearchForm /> 
 					</div>
 				</div>
 				<div className="main-content">
+					 <ImgList />
 				</div>
 			</div>
     );
