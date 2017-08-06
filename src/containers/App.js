@@ -2,7 +2,6 @@ import React, { Component } from 'react'
 import {
   BrowserRouter as Router,
   Route,
-  Link,
   Switch
 } from 'react-router-dom'
 
@@ -16,25 +15,24 @@ import './App.css'
 class App extends Component {
   render() {
     return (
-			<div>
-				<div className="main-header">
-					<div className="inner">
-						<h1 className="main-title">PhotoSearch</h1>
-						<Router>
+			<Router>
+				<Switch>
+				<div>
+					<div className="main-header">
+						<div className="inner">
 							<Navbar/>
-						</Router>
+							<h1 className="main-title">PhotoSearch</h1>
+							<Route exact path='/search' component={SearchForm}/>
+						</div>
+					</div>
+					<div className="main-content">
+						<Route exact path='/' render={Home}/>
+						<Route exact path='/about' render={About}/>
+						 <Route exact path='/search' component={ImgList}/> 
 					</div>
 				</div>
-				<div className="main-content">
-					<Router>
-						<div>
-							<Route exact path='/' render={Home}/>
-							<Route exact path='/about' render={About}/>
-							<Route exact path='/search' render={ImgList}/> 
-						</div>
-					</Router>
-				</div>
-			</div>
+				</Switch>
+			</Router>
     );
   }
 }
