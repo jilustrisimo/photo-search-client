@@ -68,6 +68,14 @@ button {
   z-index: 2000;
 }
 
+img {
+    width:  225px;
+    height: 150px;
+    background-position: 50% 50%;
+    background-repeat:   no-repeat;
+    background-size:     cover;
+}
+
 /* ================================= 
   Page Components
 ==================================== */
