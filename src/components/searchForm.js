@@ -12,7 +12,9 @@ class SearchForm extends Component {
 	handleSubmit = e => {
 		e.preventDefault()
 		this.props.performSearch(this.state.input)
-		e.currentTarget.reset()
+		this.setState({
+      input: ''
+    })
 	}
 
   handleChange = e => {
