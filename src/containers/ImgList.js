@@ -21,7 +21,7 @@ class ImgList extends Component {
         />
       )
     } else if (this.props.loading == true) {
-        <img src={logo} className="App-logo" alt="logo" />
+        result = <img src={logo} className="App-logo" alt="logo" />
     } else {
       result = <NoImgs/>
     }
