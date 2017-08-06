@@ -31,6 +31,13 @@ const Navbar = () =>
     activeStyle={{
     background: 'darkblue'
     }}>About</NavLink>
+    <NavLink
+    to='/search'
+    exact
+    style={link}
+    activeStyle={{
+      background: 'darkblue'
+    }}>Search</NavLink>
   </div>
 
 export default Navbar
