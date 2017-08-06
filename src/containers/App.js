@@ -20,17 +20,19 @@ class App extends Component {
 				<div className="main-header">
 					<div className="inner">
 						<h1 className="main-title">PhotoSearch</h1>
-             <Router>
-							 <div>
-								 <Navbar/>
-								 <Route exact path='/' render={Home}/>
-								 <Route exact path='/about' render={About}/>
-							 </div>
-						 </Router>
+						<Router>
+							<Navbar/>
+						</Router>
 					</div>
 				</div>
 				<div className="main-content">
-					 <ImgList />
+					<Router>
+						<div>
+							<Route exact path='/' render={Home}/>
+							<Route exact path='/about' render={About}/>
+							<Route exact path='/search' render={ImgList}/> 
+						</div>
+					</Router>
 				</div>
 			</div>
     );
