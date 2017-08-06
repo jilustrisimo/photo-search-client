@@ -125,9 +125,14 @@ button {
   min-width: 100%;
 }
 
+.navbar {
+  float:right;
+}
+
 .App-logo {
   animation: App-logo-spin infinite 20s linear;
-  height: 200px;
+  display: flex;
+  align-items: center;
 }
 
 @keyframes App-logo-spin {
