@@ -14,7 +14,6 @@ class ImgList extends Component {
       result = this.imgs.map( img =>
         <Img
           url={img.urls.thumb}
-          full={img.urls.regular}
           user={img.user.links.regular}
           name={img.user.name}
           link={img.links.html}
