@@ -9,9 +9,12 @@ class Img extends Component {
     return(
       <li>
         <a href={this.props.link}>
-          <img src={this.props.url} alt='Preview Not Available' />
+          <img src={this.props.url} alt='Preview Not Available' title='Open Original'/>
         </a>
-          <a href={this.props.user}>{this.props.name}</a>
+        <a href={this.props.user} title='View Photographer Profile'>{this.props.name}</a>
+        <a href='#' title='Like Photo'>
+          <i className="material-icons icn-thumb">thumb_up</i>
+        </a>
       </li>
     )
   }
