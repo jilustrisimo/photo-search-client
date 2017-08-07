@@ -10,7 +10,7 @@ import ImgList from '../containers/ImgList'
 import Navbar from '../components/Navbar'
 import Home from '../components/Home'
 import About from '../components/About'
-import './App.css'
+import '../styles/App.css'
 
 class App extends Component {
   render() {
