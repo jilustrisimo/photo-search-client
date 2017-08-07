@@ -14,13 +14,14 @@ class ImgList extends Component {
       result = this.imgs.map( img =>
         <Img
           url={img.urls.thumb}
-          user={img.user.links.html}
+          full={img.urls.regular}
+          user={img.user.links.regular}
           name={img.user.name}
           link={img.links.html}
           key={img.id}
         />
       )
-    } else if (this.props.loading == true) {
+    } else if (this.props.loading === true) {
         result = <img src={logo} className="App-logo" alt="logo" />
     } else {
       result = <NoImgs/>
