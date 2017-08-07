@@ -135,7 +135,11 @@ img {
 }
 
 .navbar {
-  float:right;
+  float: right;
+}
+
+.center {
+  text-align: center;
 }
 
 .App-logo {
