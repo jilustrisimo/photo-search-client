@@ -1,15 +1,21 @@
-import React from 'react'
+import React, { Component } from 'react'
+import SingleImg from './SingleImg'
 
-const Img = props =>
-  <li>
-    <a href={props.link}>
-      <img src={props.url} alt='Unsplash Image Here' />
-    </a>
-    <p>
-      Photo by
-      <a href={props.user}>{props.name}</a>
-      <a href={props.link}>See on Unsplash</a>
-    </p>
-  </li>
+class Img extends Component {
+  constructor(props) {
+    super(props)
+  }
+
+  render(){
+    return(
+      <li>
+        <a href={this.props.link}>
+          <img src={this.props.url} alt='Unsplash Image Here' />
+        </a>
+          <a href={this.props.user}>{this.props.name}</a>
+      </li>
+    )
+  }
+}
 
 export default Img
