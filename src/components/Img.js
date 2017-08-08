@@ -1,5 +1,4 @@
 import React, { Component } from 'react'
-// import { connect } from 'react-redux'
 
 class Img extends Component {
 
@@ -12,7 +11,6 @@ class Img extends Component {
   }
 
   render(){
-    console.log(this.props)
     return(
       <li>
         <a href={this.props.link} onClick={() => this.props.savePhoto(this.params)} target='_blank'>
@@ -24,6 +22,4 @@ class Img extends Component {
   }  
 }
 
-
-// export default connect(null, matchDispatchToProps)(Img)
 export default Img
