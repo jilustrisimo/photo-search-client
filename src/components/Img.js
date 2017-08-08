@@ -1,8 +1,5 @@
 import React, { Component } from 'react'
-import { connect } from 'react-redux'
-import { bindActionCreators } from 'redux'
-
-import { saveImg } from '../redux/actions/ImgActions'
+// import { connect } from 'react-redux'
 
 class Img extends Component {
 
@@ -14,15 +11,11 @@ class Img extends Component {
     }
   }
 
-  handleClick = params => {
-    this.props.saveImg(params)
-  }
-
   render(){
-
+    console.log(this.props)
     return(
       <li>
-        <a href={this.props.link} onClick={() => this.handleClick(this.params)} target='_blank'>
+        <a href={this.props.link} onClick={() => this.props.savePhoto(this.params)} target='_blank'>
           <img src={this.props.url} alt='Preview Not Available' title='View Original'/>
         </a>
         <a href={this.props.user} title='View Photographer Profile'>{this.props.name}</a>
@@ -31,8 +24,6 @@ class Img extends Component {
   }  
 }
 
-const matchDispatchToProps = dispatch => {
-	return bindActionCreators({saveImg: saveImg}, dispatch)
-}
 
-export default connect(null, matchDispatchToProps)(Img)
+// export default connect(null, matchDispatchToProps)(Img)
+export default Img
