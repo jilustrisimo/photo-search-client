@@ -24,7 +24,7 @@ class ImgList extends Component {
           name={img.user.name}
           link={img.links.html}
           key={img.id}
-          savePhoto={this.handleClick}
+          save={this.handleClick}
         />
       )
     } else if (this.props.loading === true) {
