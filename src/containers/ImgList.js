@@ -1,11 +1,17 @@
 import React, { Component } from 'react'
 import { connect } from 'react-redux'
+import { bindActionCreators } from 'redux'
 
+import { saveImg } from '../redux/actions/ImgActions'
 import Img from '../components/Img'
 import NoImgs from '../components/NoImgs'
 import logo from './logo.svg'
 
 class ImgList extends Component {
+
+  handleClick = params => {
+    this.props.saveImg(params)
+  }
 
   render(){
     this.imgs = this.props.imgs
@@ -18,6 +24,7 @@ class ImgList extends Component {
           name={img.user.name}
           link={img.links.html}
           key={img.id}
+          savePhoto={this.handleClick}
         />
       )
     } else if (this.props.loading === true) {
@@ -41,4 +48,8 @@ const mapStateToProps = state => {
   }
 }
 
-export default connect(mapStateToProps)(ImgList)
+const matchDispatchToProps = dispatch => {
+	return bindActionCreators({saveImg: saveImg}, dispatch)
+}
+
+export default connect(mapStateToProps, matchDispatchToProps)(ImgList)
