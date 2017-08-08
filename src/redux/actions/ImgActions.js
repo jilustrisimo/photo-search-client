@@ -9,14 +9,11 @@ axios.defaults.headers.common['Access-Control-Allow-Origin'] = 'http://localhost
 export const saveImg = params => {
   return dispatch => {
     dispatch({
-      type: 'SAVE_IMG',
+      type: 'SAVE_IMAGE',
       payload: axios.post(
         '/favorites',
-        params)
-        .then(resp => {
-          console.log(resp)
-        })
-
+        params
+      )
     })
   }
 }
