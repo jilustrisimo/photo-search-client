@@ -12,6 +12,7 @@ const Home = () =>
     <p>
       There is also a list of recently viewed photos under the "Recent Views" tab.
     </p>
+    <iframe width="560" height="315" src="https://www.youtube.com/embed/1oVobXNEmW4" frameborder="0" allowfullscreen></iframe>
   </div>
 
 export default Home
