@@ -1,7 +1,10 @@
 const initialState = {
   posting: false,
   posted: false,
+  fetching: false,
+  fetched: false,
   img: {},
+  imgs: [],
   error: null
 }
 export default (state=initialState, action) => {
@@ -13,10 +16,21 @@ export default (state=initialState, action) => {
         ...state, 
         posting: false,
         posted: true,
-        img: action.payload
+        img: action.payload.data.favorite
       }
     case 'SAVE_IMAGE_REJECTED':
       return {...state, posting: false, error: action.payload}
+    case 'GET_IMAGES_PENDING':
+      return {...state, fetching: true}
+    case 'GET_IMAGES_FULFILLED':
+      return {
+        ...state, 
+        fetching: false,
+        fetched: true,
+        imgs: action.payload.data.favorites
+      }
+    case 'GET_IMAGES_REJECTED':
+      return {...state, fetching: false, error: action.payload}
     default:
       return state
   }
