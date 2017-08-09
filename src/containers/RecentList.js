@@ -4,7 +4,7 @@ import { bindActionCreators } from 'redux'
 
 import { getImgs } from '../redux/actions/ImgActions'
 import Recent from '../components/Recent'
-import logo from './logo.svg'
+import logo from '../styles/logo.svg'
 
 class RecentList extends Component {
 

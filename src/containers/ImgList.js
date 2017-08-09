@@ -5,7 +5,7 @@ import { bindActionCreators } from 'redux'
 import { saveImg } from '../redux/actions/ImgActions'
 import Img from '../components/Img'
 import NoImgs from '../components/NoImgs'
-import logo from './logo.svg'
+import logo from '../styles/logo.svg'
 
 class ImgList extends Component {
 
