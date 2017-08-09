@@ -1,7 +1,6 @@
 import axios from 'axios'
 
-// axios.defaults.baseURL = 'https://photo-search-api.herokuapp.com/api/v1'
-axios.defaults.baseURL = 'http://localhost:3001/api/v1'
+axios.defaults.baseURL = process.env.REACT_APP_RAILS_URL
 axios.defaults.headers.common['Accept'] = 'application/json'
 axios.defaults.headers.common['Content-Type'] = 'application/json'
 axios.defaults.headers.common['Access-Control-Allow-Origin'] = 'http://localhost:3000'
@@ -14,6 +13,15 @@ export const saveImg = params => {
         '/favorites',
         params
       )
+    })
+  }
+}
+
+export const getImgs = () => {
+  return dispatch => {
+    dispatch({
+      type:'GET_IMAGES',
+      payload: axios.get('/favorites')
     })
   }
 }
