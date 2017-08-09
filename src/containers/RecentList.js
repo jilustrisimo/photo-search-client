@@ -2,7 +2,7 @@ import React, { Component } from 'react'
 import { connect } from 'react-redux'
 import { bindActionCreators } from 'redux'
 
-import { getImgs } from '../redux/actions/ImgActions'
+import { getImgs, upVote } from '../redux/actions/ImgActions'
 import Recent from '../components/Recent'
 import logo from '../styles/logo.svg'
 
@@ -12,8 +12,13 @@ class RecentList extends Component {
     this.props.getImgs()
   }
 
+  // componentWillReceiveProps(nextProps){
+  //   this.props = nextProps
+  // }
+
   render(){
     this.imgs = this.props.imgs
+    console.log('render',this.props.imgs)
     let result
     if (this.imgs.length > 0){
       result = this.imgs.map( img =>
@@ -23,12 +28,14 @@ class RecentList extends Component {
           name={img.photographer}
           link={img.remoteURL}
           key={img.id}
+          id={img.id}
+          upVoteCount={img.upVoteCount}
         />
       )
     } else if (this.props.loading === true) {
         result = <img src={logo} className="App-logo" alt="logo" />
     }
-
+console.log(result)
     return (
       <ul className="img-list">
         {result}
@@ -45,7 +52,10 @@ const mapStateToProps = state => {
 }
 
 const matchDispatchToProps = dispatch => {
-	return bindActionCreators({getImgs: getImgs}, dispatch)
+	return bindActionCreators({
+    getImgs: getImgs,
+    // upVote: upVote
+  }, dispatch)
 }
 
 export default connect(mapStateToProps, matchDispatchToProps)(RecentList)

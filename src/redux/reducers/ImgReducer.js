@@ -31,6 +31,17 @@ export default (state=initialState, action) => {
       }
     case 'GET_IMAGES_REJECTED':
       return {...state, fetching: false, error: action.payload}
+    case 'UPVOTE_IMAGE_PENDING':
+      return {...state, posting: true}
+    case 'UPVOTE_IMAGE_FULFILLED':
+      return {
+        ...state, 
+        posting: false,
+        posted: true,
+        imgs: action.payload.data.favorites
+      }
+    case 'UPVOTE_IMAGE_REJECTED':
+      return {...state, posting: false, error: action.payload}
     default:
       return state
   }
