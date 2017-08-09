@@ -22,6 +22,13 @@ const Navbar = () =>
       background: '#D1D0CE'
     }}>Home</NavLink>
     <NavLink
+    to='/recent'
+    exact
+    style={link}
+    activeStyle={{
+      background: '#D1D0CE'
+    }}>Recent Views</NavLink>
+    <NavLink
     to='/search'
     exact
     style={link}
