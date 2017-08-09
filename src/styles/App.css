@@ -73,6 +73,15 @@ img {
   margin: 0;
 }
 
+.recent{
+  /* font-size: 1em; */
+  /* line-height: 80px; */
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  margin: 0;
+  text-align: center
+}
+
 .search-form input:only-of-type {
   width: 100%;
   margin-right: -40px;
