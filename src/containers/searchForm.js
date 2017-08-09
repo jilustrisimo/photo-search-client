@@ -32,7 +32,7 @@ class SearchForm extends Component {
 					onChange={e => this.handleChange(e)}
 					value={this.state.input}
 					name="search"
-					placeholder="Search..."
+					placeholder="Search Unsplash..."
 				/>
 				<button type="submit" id="submit" className="search-button">
 					<i className="material-icons icn-search">search</i>
