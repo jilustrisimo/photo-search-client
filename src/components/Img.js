@@ -6,7 +6,8 @@ class Img extends Component {
     favorite: {
       photographer: this.props.name,
       image_url: this.props.url,
-      profile_url: this.props.user
+      profile_url: this.props.user,
+      remote_url: this.props.link
     }
   }
 
