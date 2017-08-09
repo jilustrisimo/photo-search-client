@@ -74,12 +74,11 @@ img {
 }
 
 .recent{
-  /* font-size: 1em; */
-  /* line-height: 80px; */
   text-transform: uppercase;
   letter-spacing: 1px;
-  margin: 0;
-  text-align: center
+  margin: 10;
+  text-align: center;
+  text-decoration: underline;
 }
 
 .search-form input:only-of-type {
