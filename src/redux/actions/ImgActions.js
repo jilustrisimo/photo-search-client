@@ -3,7 +3,7 @@ import axios from 'axios'
 axios.defaults.baseURL = process.env.REACT_APP_RAILS_URL
 axios.defaults.headers.common['Accept'] = 'application/json'
 axios.defaults.headers.common['Content-Type'] = 'application/json'
-axios.defaults.headers.common['Access-Control-Allow-Origin'] = 'http://localhost:3000'
+axios.defaults.headers.common['Access-Control-Allow-Origin'] = 'https://photo-search-client.herokuapp.com/'
 
 export const saveImg = params => {
   return dispatch => {
